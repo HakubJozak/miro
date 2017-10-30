@@ -60,7 +60,7 @@ gem 'dotenv-rails'
 gem 'simple_form'
 gem 'cells-rails'
 gem 'cells-slim'
-group [:development, :test] do
+group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
 end
