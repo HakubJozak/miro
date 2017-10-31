@@ -3,6 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 document.addEventListener "turbolinks:load", ->
-  field = $('#editor')[0]
-  editor = CodeMirror.fromTextArea(field, lineNumbers: true)
-
+  field = $('#mi-editor')[0]
+  editor = CodeMirror.fromTextArea(field, lineNumbers: true, autofocus: true)
