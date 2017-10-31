@@ -90,6 +90,7 @@ GEM
       railties (>= 3.2, < 5.2)
     erubi (1.7.0)
     execjs (2.7.0)
+    fabric-rails (1.2.1)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
@@ -244,6 +245,7 @@ DEPENDENCIES
   codemirror-rails
   coffee-rails (~> 4.2)
   dotenv-rails
+  fabric-rails
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails

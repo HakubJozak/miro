@@ -19,6 +19,7 @@
 
 
 $primary: #637dac;
+$border: lighten($primary, 40%);
 
 body > .container-fluid {
     padding-left: 0;
@@ -36,13 +37,29 @@ body > .container-fluid {
     height: 100vh;
     margin: 0;
     border: none;
-    border-right: 3px solid lighten($primary, 40%);
+    border-right: 3px solid $border;
+}
+
+#mi-canvas {
+  margin-top: 10px;
+  padding: 0;  
+  border: 1px solid darken($border,30%);
+  background-color: white;
 }
 
 #mi-run-button {
     position: absolute;
     bottom: 20px;
     right: 30px;
+}
+
+#mi-layout {
+  & > .col-md-6:first-child { padding-right: 0; }
+  & > .col-md-6:last-child {
+      background-color: $border;
+      height: 100vh;
+      h3 { color: $primary; }
+  }    
 }
 
 

@@ -12,9 +12,8 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require fabric
 //= require codemirror
-//= require codemirror/modes/ruby
 //= require codemirror/modes/coffeescript
 //= require turbolinks
 //= require_tree .
-

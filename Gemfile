@@ -35,6 +35,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'codemirror-rails'
 gem 'jquery-rails'
+gem 'fabric-rails'
 
 
 # Use Capistrano for deployment
