@@ -18,17 +18,33 @@
  */
 
 
+$primary: #637dac;
+
 body > .container-fluid {
     padding-left: 0;
 }
-    
+
+#mi-run-button {
+    $c: $primary;
+    border-radius: 2px;
+    background-color: $c;
+    border-color: darken($c,5%);
+}
+
 
 .CodeMirror.cm-s-default {
     height: 100vh;
     margin: 0;
     border: none;
-    border-right: 3px inset #337ab7;
+    border-right: 3px solid lighten($primary, 40%);
 }
+
+#mi-run-button {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
 
 h1 {
     color: green;
