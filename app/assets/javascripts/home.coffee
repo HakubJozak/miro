@@ -17,22 +17,43 @@ kruh(34,20,50,'red')
 cara(50,5,0,50,'black')
   """
 
-  obdelnik = ->
-    r = new fabric.Rect(
-      left: 100,
-      top: 100,
-      fill: 'red',
-      width: 20,
-      height: 20
+  obdelnik = (x,y,w,h,color = 'red',angle = 0) ->
+    canvas.add new fabric.Rect(
+      left: x,
+      top: y,
+      fill: color,
+      width: w,
+      height: h,
+      angle: angle
     )
-    canvas.add(r)
-  
+
+  kruh = (x,y,r,color = 'red') ->
+    canvas.add new fabric.Circle(
+      left: x,
+      top: y,
+      radius: r,  
+      fill: color,
+    )
+
+  trojuhelnik = (x,y,w,h,color = 'red',angle = 0) ->
+    canvas.add new fabric.Triangle(
+      left: x,
+      top: y,
+      width: w,
+      height: h,
+      angle: angle,
+      fill: color
+    )    
 
   draw = ->
     x += 10
-    obdelnik()
-    
-  setInterval draw, 100
+    obdelnik(100,100,70,70,'green')
+    kruh(400,200,30,30)
+    trojuhelnik(150,200,60,60,'orange')        
+
+
+  draw()  
+  # setInterval draw, 100
   editor.setValue(sample)
     
 
