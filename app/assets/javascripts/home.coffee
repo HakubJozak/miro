@@ -46,14 +46,16 @@ cara(50,5,0,50,'black')
     )    
 
   draw = ->
-    x += 10
-    obdelnik(100,100,70,70,'green')
+    x += 1
+    canvas.clear()    
+    
+    obdelnik(x,100,70,70,'green',x)
     kruh(400,200,30,30)
-    trojuhelnik(150,200,60,60,'orange')        
+    trojuhelnik(150,200,60,60,'orange',x*2)        
 
 
   draw()  
-  # setInterval draw, 100
+  setInterval draw, 10
   editor.setValue(sample)
     
 
