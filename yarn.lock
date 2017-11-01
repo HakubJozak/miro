@@ -1156,6 +1156,19 @@ coffee-loader@^0.8.0:
   dependencies:
     loader-utils "^1.0.2"
 
+coffee-loader@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/coffee-loader/-/coffee-loader-0.9.0.tgz#6deabd336062ddc6d773da4dfd16367fc7107bd6"
+  dependencies:
+    loader-utils "^1.0.2"
+
+coffee@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/coffee/-/coffee-4.1.0.tgz#3a74c8d61532867350253c9bcc4f8e346694d91f"
+  dependencies:
+    cross-spawn "^5.1.0"
+    debug "^2.6.8"
+
 coffeescript@1.12.7:
   version "1.12.7"
   resolved "https://registry.yarnpkg.com/coffeescript/-/coffeescript-1.12.7.tgz#e57ee4c4867cf7f606bfc4a0f2d550c0981ddd27"
@@ -1349,7 +1362,7 @@ cross-spawn@^3.0.0:
     lru-cache "^4.0.1"
     which "^1.2.9"
 
-cross-spawn@^5.0.1:
+cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
   dependencies:
