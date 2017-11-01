@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+window.snimek  = null
+
+
 document.addEventListener "turbolinks:load", ->
   field  = $('#mi-editor')[0]
   editor = CodeMirror.fromTextArea(field, lineNumbers: true, autofocus: true, mode: 'coffeescript')
@@ -12,10 +15,17 @@ document.addEventListener "turbolinks:load", ->
   x = 0
 
   sample = """
-# obdelnik(10,10, 300,300,'blue')
-# kruh(34,20,50,'red')
-cara(0,5,100,50,'black',45)
+uhel = 0
+
+snimek = ->
+  vymaz()
+  uhel += 1
+  obdelnik(100,100, 50,60,'blue',uhel)
+  cara(250,30,100,50,'black',uhel)
   """
+
+  vymaz = ->
+    canvas.clear()          
 
   obdelnik = (x,y,w,h,color = 'black',angle = 0) ->
     canvas.add new fabric.Rect(
@@ -61,24 +71,34 @@ cara(0,5,100,50,'black',45)
       fill: color
     )          
 
-  draw = ->
-    cara(150,200,150,150,'orange')
+  stop = ->
+    window.snimek = null
+
+  drawFrame = ->
+    if typeof window.snimek is 'function'
+      window.snimek()      
+      
 
   $('#mi-run-btn').click (e) ->
     e.preventDefault()
+
     console.info 'Compiling'
     source = editor.getValue()
     js = CoffeeScript.compile(source, { bare: true })
     console.info js
 
-    console.info 'Drawing'
+    console.info 'Evaluating'
     eval(js)
+    window.snimek = snimek
+
+
+  $('#mi-stop-btn').click (e) ->
+    e.preventDefault()
+    stop()
 
   $('#mi-clear-btn').click (e) ->
     e.preventDefault()
     canvas.clear()          
 
-    
-  # setInterval draw, 10
   editor.setValue(sample)
-  console.info 'loaded'
+  setInterval drawFrame, 10

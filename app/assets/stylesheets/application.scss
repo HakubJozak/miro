@@ -29,13 +29,23 @@ body > .container-fluid {
   border-radius: 2px;
 }
 
-#mi-clear-btn {
+#mi-stop-btn {
     $c: #e85757;
     background-color: $c;
     border-color: darken($c,5%);
     position: absolute;
     bottom: 1em;
-    left: 1em;
+    color: white;
+    left: 1em;    
+}
+
+#mi-clear-btn {
+    $c: orange;
+    background-color: $c;
+    border-color: darken($c,5%);
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
 }
 
 
