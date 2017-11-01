@@ -25,11 +25,27 @@ body > .container-fluid {
     padding-left: 0;
 }
 
-#mi-run-button {
-    $c: $primary;
-    border-radius: 2px;
+.btn {
+  border-radius: 2px;
+}
+
+#mi-clear-btn {
+    $c: #e85757;
     background-color: $c;
     border-color: darken($c,5%);
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+}
+
+
+#mi-run-btn {
+    $c: $primary;
+    background-color: $c;
+    border-color: darken($c,5%);
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
 }
 
 
@@ -42,7 +58,7 @@ body > .container-fluid {
 
 #mi-canvas {
   margin-top: 10px;
-  padding: 0;  
+  padding: 0;
   border: 1px solid darken($border,30%);
   background-color: white;
 }
@@ -59,7 +75,7 @@ body > .container-fluid {
       background-color: $border;
       height: 100vh;
       h3 { color: $primary; }
-  }    
+  }
 }
 
 

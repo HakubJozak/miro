@@ -12,9 +12,9 @@ document.addEventListener "turbolinks:load", ->
   x = 0
 
   sample = """
-obdelnik(10,10, 300,300,'blue')
-kruh(34,20,50,'red')
-cara(50,5,0,50,'black')
+# obdelnik(10,10, 300,300,'blue')
+# kruh(34,20,50,'red')
+cara(0,5,100,50,'black',45)
   """
 
   obdelnik = (x,y,w,h,color = 'black',angle = 0) ->
@@ -46,9 +46,15 @@ cara(50,5,0,50,'black')
     )
 
   cara = (x,y,w,h,color = 'black',angle = 0) ->
+    canvas.add(new fabric.Line([0,0,w,h], {
+        left: x,
+        top: y,
+        stroke: color
+        angle: angle
+    }));
     canvas.add new fabric.Line(
-      left: 10,
-      top: 10,
+      left: x,
+      top: y,
       width: w,
       height: h,
       angle: angle,
@@ -56,14 +62,10 @@ cara(50,5,0,50,'black')
     )          
 
   draw = ->
-    x += 1
-    canvas.clear()
+    cara(150,200,150,150,'orange')
 
-    obdelnik(x,100,70,70,'green',x)
-    kruh(400,200,30,30)
-    trojuhelnik(150,200,60,60,'orange',x*2)
-
-  $('#mi-run-button').click (e) ->
+  $('#mi-run-btn').click (e) ->
+    e.preventDefault()
     console.info 'Compiling'
     source = editor.getValue()
     js = CoffeeScript.compile(source, { bare: true })
@@ -71,10 +73,12 @@ cara(50,5,0,50,'black')
 
     console.info 'Drawing'
     eval(js)
+
+  $('#mi-clear-btn').click (e) ->
     e.preventDefault()
-    true
+    canvas.clear()          
 
-
-  # draw()
+    
   # setInterval draw, 10
   editor.setValue(sample)
+  console.info 'loaded'
