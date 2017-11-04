@@ -15,5 +15,4 @@
 //= require fabric
 //= require codemirror
 //= require codemirror/modes/coffeescript
-//= require turbolinks
 //= require_tree .
