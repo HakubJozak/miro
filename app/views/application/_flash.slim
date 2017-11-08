@@ -1,0 +1,7 @@
+- flash.each do |type,message|
+  - if type.to_sym == :notice
+    p.alert.alert-info
+      = message
+  - else
+    p.alert.alert-danger
+      = message

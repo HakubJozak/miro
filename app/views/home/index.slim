@@ -1,16 +1,25 @@
-.container-fluid
-  .row#mi-layout
-    .col-md-6
-      textarea#mi-editor
-      button#mi-run-btn.btn.btn-primary
-        ' KRESLI!
+.row#mi-layout
+  .col-md-6
+    textarea#mi-editor
 
-    .col-md-6
-      canvas#mi-canvas
-      h3
-        ' Velikost
-        ' 300 x 500
-      button#mi-clear-btn.btn
-        ' VYMAZ
-      button#mi-stop-btn.btn
-        ' ZASTAV
+
+  .col-md-6
+    canvas#mi-canvas
+    h3
+      ' Velikost
+      ' 300 x 500
+    button#mi-run-btn.btn.btn-primary
+      = icon 'play'
+      '
+      ' KRESLI!
+    '  
+    button#mi-stop-btn.btn.btn-danger
+      = icon 'stop'
+      ' 
+      ' ZASTAV
+    '  
+    button#mi-clear-btn.btn.pull-right
+      = icon 'trash'
+      '
+      ' VYMAZ
+

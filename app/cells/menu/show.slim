@@ -1,0 +1,17 @@
+nav#menu.navbar.navbar-default.navbar-fixed
+  .navbar-header
+    button.navbar-toggle aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
+      span.sr-only Toggle navigation
+      = icon 'bars'
+
+    a.navbar-brand href=root_path class="#{'active' if @home}" title='Školení Ruby'
+      = logo
+      ' &nbsp;
+      ' Miro
+
+  #navbar.navbar-collapse.collapse
+    ul.nav.navbar-nav.navbar-left
+      = li_link_to "Projekty", projects_path
+
+    ul.nav.navbar-nav.navbar-right
+      = logout_link

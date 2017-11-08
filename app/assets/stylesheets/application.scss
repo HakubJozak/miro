@@ -20,6 +20,11 @@
 
 $primary: #637dac;
 $border: lighten($primary, 40%);
+$height: 90vh;
+
+@import '../../cells/menu/menu_cell';
+
+
 
 body > .container-fluid {
     padding-left: 0;
@@ -29,38 +34,10 @@ body > .container-fluid {
   border-radius: 2px;
 }
 
-#mi-stop-btn {
-    $c: #e85757;
-    background-color: $c;
-    border-color: darken($c,5%);
-    position: absolute;
-    bottom: 1em;
-    color: white;
-    left: 1em;    
-}
-
-#mi-clear-btn {
-    $c: orange;
-    background-color: $c;
-    border-color: darken($c,5%);
-    position: absolute;
-    bottom: 1em;
-    right: 1em;
-}
-
-
-#mi-run-btn {
-    $c: $primary;
-    background-color: $c;
-    border-color: darken($c,5%);
-    position: absolute;
-    bottom: 1em;
-    right: 1em;
-}
 
 
 .CodeMirror.cm-s-default {
-    height: 100vh;
+    height: $height;
     margin: 0;
     border: none;
     border-right: 3px solid $border;
@@ -73,20 +50,18 @@ body > .container-fluid {
   background-color: white;
 }
 
-#mi-run-button {
-    position: absolute;
-    bottom: 20px;
-    right: 30px;
-}
+
 
 #mi-layout {
   & > .col-md-6:first-child { padding-right: 0; }
   & > .col-md-6:last-child {
       background-color: $border;
-      height: 100vh;
+      height: $height;
       h3 { color: $primary; }
   }
 }
+
+
 
 
 h1 {

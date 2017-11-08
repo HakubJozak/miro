@@ -67,6 +67,10 @@ gem 'dotenv-rails'
 gem 'simple_form'
 gem 'cells-rails'
 gem 'cells-slim'
+gem 'devise'
+gem 'cells'    
+
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
