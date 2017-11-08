@@ -24,13 +24,13 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/rails/console'
 require 'capistrano/shell'
-require "whenever/capistrano"
 
 require 'capistrano/puma'
 install_plugin Capistrano::Puma
+
 require 'capistrano/puma/nginx'
 install_plugin Capistrano::Puma::Nginx
-require 'capistrano/sidekiq'
+
 require 'capistrano/nginx'
 require 'capistrano/sinfin'
 require 'capistrano/serviceman'

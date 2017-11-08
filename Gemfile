@@ -74,6 +74,8 @@ gem 'cells'
 group :development, :test do
   gem 'better_errors'
   
+  gem 'capistrano3-puma'
+
   gem 'capistrano-sinfin',
       git: 'git@bitbucket.org:/Sinfin/capistrano-sinfin.git', branch: 'master'
 

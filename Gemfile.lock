@@ -337,6 +337,7 @@ DEPENDENCIES
   byebug
   capistrano-serviceman!
   capistrano-sinfin!
+  capistrano3-puma
   capybara (~> 2.13)
   cells
   cells-rails
