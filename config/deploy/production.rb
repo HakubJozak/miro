@@ -1,13 +1,10 @@
-server 'app.apple.sinfin.io', user: 'miro', roles: %w{app app1 web cron db}
-server 'worker.apple.sinfin.io', user: 'miro', roles: %w{worker}
-
+server 'app.banana.sinfin.io', user: 'miro', roles: %w{app app1 web cron db}
+# server 'worker.apple.sinfin.io', user: 'miro', roles: %w{worker}
 
 
 set :deploy_to, "/home/miro/#{fetch :stage}"
 set :branch, 'master'
 
-# you must not `cap db:push` in production
-set :disallow_pushing, true
 
 set :nginx_primary_domain, 'miro.skoleniruby.cz'
 set :nginx_secondary_domains, 'miro.production.sinfin.io'
