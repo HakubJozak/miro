@@ -68,10 +68,18 @@ gem 'simple_form'
 gem 'cells-rails'
 gem 'cells-slim'
 gem 'devise'
-gem 'cells'    
+gem 'cells'
 
 
 group :development, :test do
+  gem 'better_errors'
+  
+  gem 'capistrano-sinfin',
+      git: 'git@bitbucket.org:/Sinfin/capistrano-sinfin.git', branch: 'master'
+
+  gem 'capistrano-serviceman',
+      github: 'Sinfin/capistrano-serviceman', branch: 'master'
+
   gem 'pry-rails'
   gem 'pry-byebug'
 end

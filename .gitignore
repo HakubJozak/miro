@@ -20,3 +20,7 @@
 /public/packs
 /public/packs-test
 /node_modules
+
+config/deploy.backup
+config/deploy/staging
+config/deploy/production
