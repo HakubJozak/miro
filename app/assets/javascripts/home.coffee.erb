@@ -15,32 +15,7 @@ $(document).ready ->
   canvas.setWidth(500)
   x = 0
 
-  sample = """
-x = 0
-y = 0
-sx = 5
-sy = 5
-
-VYSKA = 500
-SIRKA = 300 
-
-snimek = ->
-  vymaz()
-  obdelnik(x,y,25,100, 'red')
-
-  if x > SIRKA
-    sx = -5
-  else if x < 0
-    sx = 5  
-
-  if y > VYSKA
-    sy = -sy
-  else if y < 0
-    sy = 5
-              
-  x += sx
-  y += sy
-  """
+  sample = """<%= Rails.root.join('app/assets/javascripts/sample.coffee').read %>"""
 
   vymaz = ->
     canvas.clear()
@@ -102,7 +77,7 @@ snimek = ->
   $('#mi-run-btn').click (e) ->
     e.preventDefault()
 
-    try     
+    try
       console.info 'Compiling'
       source = editor.getValue()
       js = CoffeeScript.compile(source, { bare: true })
